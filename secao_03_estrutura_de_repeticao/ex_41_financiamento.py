@@ -39,3 +39,4 @@ def gerar_dados_de_financiamente(valor_inicial: float):
         valor_parcela = valor_inicial * (1 + juros / 100) / vezes
         salario = valor_parcela * vezes
         print(f'R$ {salario:<13.2f}{juros}{"%":<14}{vezes:<24}{"R$"} {valor_parcela:>9.2f}')
+
