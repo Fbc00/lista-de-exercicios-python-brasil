@@ -10,10 +10,16 @@ Faça um programa para imprimir:
   .....
   n   n   n   n   n   n  ... n
 
-para um n informado pelo usuário. Use uma função que receba um valor n inteiro e imprima até a n-ésima linha.
 
+para um n informado pelo usuário. Use uma função que receba um valor n inteiro e imprima até a n-ésima linha.
 """
-def imprimir_linhas(n):
+
+def padrao(n):
+
+    return sua_funcao_aqui(n)
+
+
+def sua_funcao_aqui(n):
     """Escreva aqui em baixo a sua solução"""
     for i in range(1, n+1):
         for j in range(1, i+1):
@@ -21,4 +27,3 @@ def imprimir_linhas(n):
 
         print()
 
-imprimir_linhas(7)

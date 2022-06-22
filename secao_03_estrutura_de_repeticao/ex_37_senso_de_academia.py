@@ -56,3 +56,54 @@ da média das alturas e dos pesos dos clientes
 
 def rodar_senso():
     """Escreva aqui em baixo a sua solução"""
+    altura_max = 0
+    altura_min = 10000000
+    nome_altura_max = ''
+    nome_altura_min = ''
+    peso_max = 0
+    peso_min = 10000
+    nome_peso_max = ''
+    nome_peso_min = ''
+    media_altura = 0
+    media_peso = 0
+    total_altura = 0
+    total_peso = 0
+    pessoas = {}
+
+    try:
+
+        while True:
+            # transformar a entrada em um dicionário e usar reduce para calcular a média
+            # e tentar usar map e filter
+            nome = input('Nome: ')
+            altura = float(input('Altura: '))
+            peso = float(input('Peso: '))
+            pessoas[nome] = {'altura': altura, 'peso': peso}
+            if nome == '0':
+                break
+            if altura > altura_max:
+                altura_max = altura
+                nome_altura_max = nome
+            if altura < altura_min:
+                altura_min = altura
+                nome_altura_min = nome
+            if peso > peso_max:
+                peso_max = peso
+                nome_peso_max = nome
+            if peso < peso_min:
+                peso_min = peso
+                nome_peso_min = nome
+            total_altura += altura
+            total_peso += peso
+
+    except:
+        print(f'Cliente mais alto: {nome_altura_max}, com {altura_max:.0f} centímetros')
+        print(f'Cliente mais baixo: {nome_altura_min}, com {altura_min:.0f} centímetros')
+        print(f'Cliente mais magro: {nome_peso_min}, com {peso_min:.0f} kilos')
+        print(f'Cliente mais gordo: {nome_peso_max}, com {peso_max:.0f} kilos')
+        print('--------------------------------------------------')
+        print(f'Media de altura dos clientes: {(total_altura / len(pessoas)):.1f} centímetros')
+        print(f'Media de peso dos clientes: {(total_peso / len(pessoas)):.1f} kilos')
+
+
+
