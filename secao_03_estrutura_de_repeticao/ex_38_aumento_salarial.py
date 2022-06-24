@@ -30,3 +30,10 @@ Os valores devem ser exibidos com duas casas decimais
 
 def calcular_salarios_anuais(salario: float):
     """Escreva aqui em baixo a sua solução"""
+    anos_percet = {2018: 1.5, 2019: 1.5, 2020: 3, 2021: 6, 2022: 12, 2023: 24}
+    for key, value in anos_percet.items():
+        if key == 2018:
+            print(f'Salário em {key}: R$ {salario:.2f}')
+        else:
+            salario = salario + (salario * value / 100)
+            print(f'Salário em {key}: R$ {salario:.2f}. Aumento porcentual: {value:.2f}%')

@@ -49,3 +49,23 @@ Gabarito da Prova:
 
 def corrigir(*provas):
     """Escreva aqui em baixo a sua solução"""
+    alunos = {}
+    for aluno, *respostas in provas:
+        alunos[aluno] = respostas
+    notas = ['A', 'B', 'C', 'D', 'E', 'E', 'D', 'C', 'B', 'A']
+    total_notas = []
+    print(f'{"Aluno": <15}       Nota')
+    for aluno, respostas in alunos.items():
+        nota = 0
+        for resposta, gabarito in zip(respostas, notas):
+            if resposta == gabarito:
+                nota += 1
+        print(f'{aluno:<21} {nota:>2}')
+        total_notas.append(nota)
+    print('---------------------------')
+    total_alunos = len(alunos)
+    print(f'Média geral: {( sum(total_notas) / total_alunos):.1f}')
+    print(f'Maior nota: {max(total_notas)}')
+    menor = min(nota for aluno, nota in alunos.items())
+    print(f'Menor nota: {min(total_notas)}')
+    print(f'Total de Alunos: {len(alunos)}')
